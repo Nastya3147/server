@@ -16,9 +16,13 @@ require('./db/mongoose');
  app.use('/uploads', express.static('/Diplom/uploads'));
  app.use('/user', userRouter);
  app.use('/tasks', taskRouter);
- app.listen(8081, function () {
-  console.log('Example app listening on port 3000!')
+ const PORT=process.env.PORT || 8081
+ app.listen(PORT,  ()=> {
+  console.log(`Example app listening on port ${PORT}!`)
  })
+ // app.listen(8081, function () {
+ //  console.log('Example app listening on port 3000!')
+ // })
 
 
 

@@ -10,6 +10,11 @@ let app=express();
  app.use(bodyParser.json())
  app.use(cors())
 require('./db/mongoose');
+ var favicon = require('serve-favicon')
+
+ app.use(express.static(__dirname + '/dist'));
+ // app.use(favicon(__dirname + '/dist/favicon.ico'));
+ app.use(favicon(__dirname + '/dist/favicon.ico'));
  // const userRouter = require("./routers/user");
  // const taskRouter = require("./routers/tasks");
  app.use(express.json());

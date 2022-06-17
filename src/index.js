@@ -10,12 +10,12 @@ let app=express();
  app.use(bodyParser.json())
  app.use(cors())
 require('./db/mongoose');
- const userRouter = require("./routers/user");
+ // const userRouter = require("./routers/user");
  const taskRouter = require("./routers/tasks");
  app.use(express.json());
  app.use('/uploads', express.static('/Diplom/uploads'));
- app.use('/user', userRouter);
- app.use('/tasks', taskRouter);
+ // app.use('/user', userRouter);
+ app.use(require("./routers/tasks"));
  const PORT=process.env.PORT || 8081
  app.listen(PORT,  ()=> {
   console.log(`Example app listening on port ${PORT}!`)

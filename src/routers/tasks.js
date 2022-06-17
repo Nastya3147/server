@@ -55,7 +55,7 @@ router.get("/", auth, async (req, res) => {
 router.get("/find", async (req, res) => {
 
 
-        res.send("<h1>HHHHH</h1>");
+        res.send("<h1>jjjjj</h1>");
 
 });
 // router.get("/:id", auth, async (req, res) => {

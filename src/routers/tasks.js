@@ -52,6 +52,18 @@ router.get("/", auth, async (req, res) => {
             res.status(500).send();
         }
 });
+router.get("/find", async (req, res) => {
+
+    try {
+        const tasks = await Tasks.find();
+        // if (!tasks.length) {
+        //     res.status(404).send();
+        // }
+        res.status(200).send({tasks: tasks});
+    } catch {
+        res.status(500).send();
+    }
+});
 // router.get("/:id", auth, async (req, res) => {
 //
 //     try {
